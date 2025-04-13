@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shree Adhikari | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Loading Animation -->
+    <div class="loader"></div>
+
+    <header id="home">
+        <!-- Navigation -->
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="Images/logo.png" alt="Your Logo">
+            </div>
+
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="search-input" />
+                <button class="search-btn">🔍</button>
+                <div class="search-results-dropdown"></div>
+            </div>
+
+            <button id="dark-mode-toggle">🌓</button>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="intro-info">
+            <h1 id="intro-name">Shree Adhikari</h1>
+            <span id="csit-text" style="display: none;">CSIT Student |</span>
+            <div class="role-container">
+                <span id="role-title"></span>
+            </div>
+
+            <!-- CTA Buttons + Socials -->
+            <div class="cta-buttons">
+                <div class="btn-group">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="#contact" class="btn">Contact Me</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="YOUR_LINKEDIN_URL" target="_blank" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+                    </a>
+                    <a href="YOUR_GITHUB_URL" target="_blank" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
+                    </a>
+                    <a href="YOUR_TWITTER_URL" target="_blank" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter/X" />
+                    </a>
+                    <a href="YOUR_FACEBOOK_URL" target="_blank" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" />
+                    </a>
+                    <a href="YOUR_INSTAGRAM_URL" target="_blank" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="intro-image-wrapper">
+                <div class="intro-image"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Rest of the sections -->
+    <section id="about">
+        <div class="about-container">
+            <h1 class="animated-heading">About Me</h1>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>CSIT Student & Tech Enthusiast</h2>
+                    <p class="bio-text">
+                        I’m Shree Adhikari, a passionate IT graduate from Syangja, Nepal. I earned my Bachelor of
+                        Science in Computer Science and Information Technology from Tribhuvan University, studying at
+                        Soch College of Information Technology in Pokhara.
+
+                        With a strong interest in Web Design and Graphic Design, I consistently invest time in honing my
+                        creative and technical abilities. I enjoy exploring the latest design trends and transforming
+                        ideas into clean, user-friendly digital experiences.
+
+                        I'm also deeply focused on Artificial Intelligence and Data Science, aiming to build smart,
+                        impactful solutions to real-world challenges. Proficient in Python, JavaScript, and modern
+                        machine learning frameworks, I love turning data into actionable insights and crafting
+                        intelligent systems that make a difference.
+                    </p>
+
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-label">From:</span>
+                            <span class="detail-value">Pokhara, Nepal</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Education:</span>
+                            <span class="detail-value">BSc CSIT, Tribhuvan University</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Interests:</span>
+                            <span class="detail-value">AI, Web Development, Open Source</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="Images/aboutme.jpg" alt="Shree Adhikari">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills-section">
+        <div class="skills-intro">
+            <h2>Skills I’m Proud Of</h2>
+            <p>I love bringing ideas to life with code, design, and data. Here's a snapshot of the skills I’ve been
+                honing through hands-on projects and endless curiosity.</p>
+        </div>
+
+        <div class="circular-skills cycle-layout">
+            <div class="skill-circle">
+                <div class="circle" data-percent="90" data-color="#28a745">
+                    <span>90%</span>
+                </div>
+                <h4>Python</h4>
+                <p>Expert in scripting and automation</p>
+            </div>
+
+            <div class="skill-circle">
+                <div class="circle" data-percent="85" data-color="#ffc107">
+                    <span>85%</span>
+                </div>
+                <h4>JavaScript</h4>
+                <p>Frontend scripting and interactivity</p>
+            </div>
+
+            <div class="skill-circle">
+                <div class="circle" data-percent="95" data-color="#28a745">
+                    <span>95%</span>
+                </div>
+                <h4>HTML/CSS</h4>
+                <p>Clean, responsive layouts</p>
+            </div>
+
+            <div class="skill-circle">
+                <div class="circle" data-percent="80" data-color="#ffc107">
+                    <span>80%</span>
+                </div>
+                <h4>UI/UX</h4>
+                <p>User-centered design thinking</p>
+            </div>
+
+            <div class="skill-circle">
+                <div class="circle" data-percent="85" data-color="#28a745">
+                    <span>85%</span>
+                </div>
+                <h4>Machine Learning</h4>
+                <p>Data modeling with Python</p>
+            </div>
+
+            <div class="skill-circle">
+                <div class="circle" data-percent="80" data-color="#17a2b8">
+                    <span>80%</span>
+                </div>
+                <h4>Data Analysis</h4>
+                <p>Transforming data into insights</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="projects-container">
+            <h2 class="section-heading">My <span class="highlight">Projects</span></h2>
+            <p class="section-subheading">Here's a showcase of my recent work</p>
+    
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Images/project1.jpg" alt="AI Chatbot" class="project-image">
+                        <div class="project-overlay">
+                            <a href="YOUR_LIVE_DEMO_URL" target="_blank" class="demo-btn">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Chatbot</h3>
+                        <p>A smart chatbot built using Python and NLP techniques to simulate human conversation and provide support.</p>
+                        <div class="project-meta">
+                            <div class="tech-stack">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>NLP</span>
+                            </div>
+                            <a href="YOUR_GITHUB_URL" target="_blank" class="github-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Images/project2.jpg" alt="Portfolio Website" class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="demo-btn">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>My personal portfolio website to showcase my skills, projects, and contact info, made with HTML, CSS, and JS.</p>
+                        <div class="project-meta">
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="#" class="github-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="contact" class="contact-section">
+        <div class="contact-wrapper">
+            <!-- Left side: Contact Info -->
+            <div class="contact-info">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Feel free to use the form or reach out directly. I typically respond within 24 hours.</p>
+    
+                <div class="info-items">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <a href="tel:+9779800000000">+977 9800000000</a>
+                        </div>
+                    </div>
+    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                                <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <a href="mailto:info@shreeadhikari.com.np">info@shreeadhikari.com.np</a>
+                        </div>
+                    </div>
+    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <span>Pokhara, Nepal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Right side: Form -->
+            <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="firstName" name="firstName" required>
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" name="lastName" required>
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Phone Number (optional)</label>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"/>
+                    </svg>
+                </button>
+                
+                <div id="form-message" class="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© 2025 Shree Adhikari. All rights reserved.</p>
+    </footer>
+
+    <button id="scroll-to-top-btn" class="scroll-to-top-btn">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
