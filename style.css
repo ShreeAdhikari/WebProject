@@ -1,3 +1,8 @@
+/* Remove underline effect from logo link */
+.logo a::after {
+  display: none !important;
+  content: none !important;
+}
 /* Reset & Base Styles */
 * {
   margin: 0;
@@ -67,6 +72,7 @@ header {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding-top: 100px; /* Offset for fixed navbar */
 }
 
 
@@ -89,6 +95,12 @@ header {
   object-fit: contain;
   transition: transform 0.3s;
   cursor: pointer;
+  border-right: none !important;
+  animation: none !important;
+}
+
+.logo img:hover {
+  transform: scale(1.08);
 }
 
 .logo a {
@@ -104,9 +116,7 @@ header {
   transition: transform 0.3s;
 }
 
-.logo:hover img {
-  transform: scale(1.1);
-}
+
 
 
 
@@ -122,7 +132,7 @@ header {
   justify-content: center;
   gap: 0;
   z-index: 1500;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  /* box-shadow removed to eliminate persistent line below navbar */
   font-size: 1.2em;
 }
 
@@ -301,13 +311,48 @@ header {
   width: 100%;
 }
 
-#dark-mode-toggle {
-  background: transparent;
+
+/* Modern sun/moon icon toggle */
+#dark-mode-toggle.icon-toggle {
+  background: none;
   border: none;
-  color: white;
-  font-size: 1.2rem;
+  color: #fff;
+  font-size: 1.5rem;
   cursor: pointer;
-  padding: 5px;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  position: relative;
+}
+#dark-mode-toggle.icon-toggle:hover {
+  background: rgba(250,87,40,0.12);
+}
+#dark-mode-toggle .icon-sun,
+#dark-mode-toggle .icon-moon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+#dark-mode-toggle .icon-sun {
+  opacity: 1;
+}
+#dark-mode-toggle.dark .icon-sun {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+#dark-mode-toggle .icon-moon {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+#dark-mode-toggle.dark .icon-moon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 /* Hero Content */
@@ -318,20 +363,16 @@ header {
   z-index: 2;
 }
 
+
 #intro-name {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid white;
-  width: 0;
-  animation: typing 2s steps(30, end) forwards;
+  /* border-right and animation removed to disable logo line animation */
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
+
 
 .role-container {
   font-size: 1.5rem;
@@ -1001,29 +1042,59 @@ body.dark-mode .detail-value {
   position: relative;
 }
 
+
+/* SVG Animated Circular Progress Bar */
 .circle {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
-  background:
-    radial-gradient(white 65%, transparent 65%),
-    conic-gradient(var(--skill-color, #28a745) var(--percent, 0%), #eee var(--percent, 0%));
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  border-radius: 50%;
+  overflow: visible;
+  background: none;
 }
-
-.circle span {
+.progress-ring {
+  width: 120px;
+  height: 120px;
+  display: block;
+  border-radius: 50%;
+}
+.circle:hover {
+  transform: scale(1.05);
+}
+.progress-ring {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+.progress-ring-bg {
+  stroke: #eee;
+  opacity: 1;
+}
+.progress-ring-bar {
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+  transition: stroke-dashoffset 1.2s cubic-bezier(.77,0,.18,1);
+}
+.circle-percent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   font-weight: bold;
   font-size: 1.5rem;
   color: #333;
 }
-
-.circle:hover {
-  transform: scale(1.05);
+body.dark-mode .circle-percent {
+  color: #f0f0f0;
+}
+body.dark-mode .progress-ring-bg {
+  stroke: #333;
 }
 
 .skill-circle h4 {

@@ -80,16 +80,24 @@ scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ===== DARK MODE TOGGLE =====
+// ===== DARK MODE TOGGLE (Sun/Moon Icon) =====
 const darkModeToggle = document.getElementById('dark-mode-toggle');
+function updateDarkModeIcon() {
+  if (document.body.classList.contains('dark-mode')) {
+    darkModeToggle.classList.add('dark');
+  } else {
+    darkModeToggle.classList.remove('dark');
+  }
+}
 darkModeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+  updateDarkModeIcon();
 });
-
 if (localStorage.getItem('darkMode') === 'true') {
   document.body.classList.add('dark-mode');
 }
+updateDarkModeIcon();
 
 // ===== SMOOTH SCROLLING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -100,18 +108,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// ===== CIRCULAR SKILL BARS =====
-document.addEventListener("DOMContentLoaded", () => {
-  const circles = document.querySelectorAll(".circle");
-  circles.forEach(circle => {
+// ===== ANIMATED SVG CIRCULAR SKILL BARS =====
+function animateSkillCircles() {
+  document.querySelectorAll('.circle').forEach(circle => {
     const percent = parseInt(circle.dataset.percent);
     const color = circle.dataset.color;
-    const fill = percent > 0 ? `${percent}%` : `0%`;
-    const fallback = percent < 0 ? "#dc3545" : "#eee";
-
-    circle.style.background = `conic-gradient(${color} 0% ${Math.abs(percent)}%, ${fallback} ${Math.abs(percent)}% 100%)`;
+    const ring = circle.querySelector('.progress-ring-bar');
+    const radius = 54;
+    const circumference = 2 * Math.PI * radius;
+    ring.style.stroke = color;
+    ring.style.strokeDasharray = `${circumference}`;
+    ring.style.strokeDashoffset = `${circumference}`;
+    setTimeout(() => {
+      ring.style.strokeDashoffset = `${circumference - (percent / 100) * circumference}`;
+    }, 300);
   });
-});
+}
+// Animate when skills section is in view
+const skillsSection = document.getElementById('skills-section');
+let skillsAnimated = false;
+if (skillsSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !skillsAnimated) {
+        animateSkillCircles();
+        skillsAnimated = true;
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(skillsSection);
+}
 
 // ===== ENHANCED SEARCH FUNCTIONALITY =====
 const searchInput = document.getElementById('search-input');

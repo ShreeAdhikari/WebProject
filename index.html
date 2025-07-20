@@ -30,7 +30,7 @@
         <div class="navbar">
       <div class="logo">
         <a href="#home" id="logo-link">
-          <img src="Images/duplicatelogo.png" alt="Your Logo">
+          <img src="Images/shreeverse_logo_centered-removebg-preview.png" alt="Your Logo" style="border-right: none !important; animation: none !important; box-shadow: none !important;">
         </a>
       </div>
       <nav class="main-nav">
@@ -46,7 +46,14 @@
           <button class="search-btn">🔍</button>
           <div class="search-results-dropdown"></div>
         </div>
-        <button id="dark-mode-toggle">🌓</button>
+        <button id="dark-mode-toggle" class="icon-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <span class="icon-sun" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+          <span class="icon-moon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          </span>
+        </button>
       </div>
     </div>
 
@@ -146,7 +153,11 @@
         <div class="circular-skills cycle-layout">
             <div class="skill-circle">
                 <div class="circle" data-percent="90" data-color="#28a745">
-                    <span>90%</span>
+                  <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-bg" cx="60" cy="60" r="54" stroke="#eee" stroke-width="12" fill="none"/>
+                    <circle class="progress-ring-bar" cx="60" cy="60" r="54" stroke="#28a745" stroke-width="12" fill="none" stroke-linecap="round"/>
+                  </svg>
+                  <span class="circle-percent">90%</span>
                 </div>
                 <h4>Python</h4>
                 <p>Expert in scripting and automation</p>
@@ -154,7 +165,11 @@
 
             <div class="skill-circle">
                 <div class="circle" data-percent="85" data-color="#ffc107">
-                    <span>85%</span>
+                  <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-bg" cx="60" cy="60" r="54" stroke="#eee" stroke-width="12" fill="none"/>
+                    <circle class="progress-ring-bar" cx="60" cy="60" r="54" stroke="#ffc107" stroke-width="12" fill="none" stroke-linecap="round"/>
+                  </svg>
+                  <span class="circle-percent">85%</span>
                 </div>
                 <h4>JavaScript</h4>
                 <p>Frontend scripting and interactivity</p>
@@ -162,7 +177,11 @@
 
             <div class="skill-circle">
                 <div class="circle" data-percent="95" data-color="#28a745">
-                    <span>95%</span>
+                  <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-bg" cx="60" cy="60" r="54" stroke="#eee" stroke-width="12" fill="none"/>
+                    <circle class="progress-ring-bar" cx="60" cy="60" r="54" stroke="#28a745" stroke-width="12" fill="none" stroke-linecap="round"/>
+                  </svg>
+                  <span class="circle-percent">95%</span>
                 </div>
                 <h4>HTML/CSS</h4>
                 <p>Clean, responsive layouts</p>
@@ -170,7 +189,11 @@
 
             <div class="skill-circle">
                 <div class="circle" data-percent="80" data-color="#ffc107">
-                    <span>80%</span>
+                  <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-bg" cx="60" cy="60" r="54" stroke="#eee" stroke-width="12" fill="none"/>
+                    <circle class="progress-ring-bar" cx="60" cy="60" r="54" stroke="#ffc107" stroke-width="12" fill="none" stroke-linecap="round"/>
+                  </svg>
+                  <span class="circle-percent">80%</span>
                 </div>
                 <h4>UI/UX</h4>
                 <p>User-centered design thinking</p>
@@ -178,7 +201,11 @@
 
             <div class="skill-circle">
                 <div class="circle" data-percent="85" data-color="#28a745">
-                    <span>85%</span>
+                  <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-bg" cx="60" cy="60" r="54" stroke="#eee" stroke-width="12" fill="none"/>
+                    <circle class="progress-ring-bar" cx="60" cy="60" r="54" stroke="#28a745" stroke-width="12" fill="none" stroke-linecap="round"/>
+                  </svg>
+                  <span class="circle-percent">85%</span>
                 </div>
                 <h4>Machine Learning</h4>
                 <p>Data modeling with Python</p>
@@ -186,7 +213,11 @@
 
             <div class="skill-circle">
                 <div class="circle" data-percent="80" data-color="#17a2b8">
-                    <span>80%</span>
+                  <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-bg" cx="60" cy="60" r="54" stroke="#eee" stroke-width="12" fill="none"/>
+                    <circle class="progress-ring-bar" cx="60" cy="60" r="54" stroke="#17a2b8" stroke-width="12" fill="none" stroke-linecap="round"/>
+                  </svg>
+                  <span class="circle-percent">80%</span>
                 </div>
                 <h4>Data Analysis</h4>
                 <p>Transforming data into insights</p>
