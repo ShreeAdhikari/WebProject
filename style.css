@@ -69,14 +69,32 @@ header {
   overflow: hidden;
 }
 
+
+/* Always top left for logo */
 .logo {
-  position: absolute;
-  left: -60px;           /* Fixed distance from left */
-  top: 50%;             /* Center vertically */
-  transform: translateY(-50%); /* Precise vertical centering */
-  height: 110px;         /* Adjust to match navbar height */
+  position: static;
+  height: 92px;
+  width: 92px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.logo img {
+  height: 100%;
   width: auto;
-  z-index: 101;
+  object-fit: contain;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .logo img {
@@ -90,30 +108,176 @@ header {
   transform: scale(1.1);
 }
 
+
+
 .navbar {
-  position: absolute;
-  top: 40px;            /* Match this with logo's container */
-  right: 30px;
-  left: 120px;          /* Increase if logo overlaps */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background: rgba(44, 80, 118, 0.98);
   display: flex;
-  align-items: center;  /* Ensures navbar items are centered */
-  gap: 17px;
-  z-index: 100;
-  justify-content: flex-end;
-  height: 70px;         /* Explicit height to match logo */
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  z-index: 1500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 1.2em;
 }
 
-/* Search and Toggle Positioning */
-.search-container {
-  position: relative;
-  top: -4px;
-  margin-right: 3px;
+/* Group search and toggle vertically at right */
+.navbar .right-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  margin-right: 18px;
+}
+
+.navbar .search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  width: auto;
+  max-width: none;
+}
+
+#search-input {
+  width: 120px;
+  min-width: 0;
+  max-width: 180px;
+  margin-right: 0;
 }
 
 #dark-mode-toggle {
-  position: relative;
-  top: 0px;
+  margin: 0;
+  width: auto;
+  display: block;
 }
+
+.navbar .main-nav,
+.navbar .search-container,
+.navbar #search-input,
+.navbar #dark-mode-toggle {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
+
+
+#search-input:focus {
+  width: 180px;
+  background: rgba(255,255,255,0.2);
+  border-color: white;
+}
+
+
+
+
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: #fff;
+  background: #fa5728;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.08rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(250,87,40,0.08);
+  margin: 0 2px;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: #fff;
+  color: #fa5728;
+  box-shadow: 0 4px 16px rgba(250,87,40,0.18);
+}
+
+
+@media (max-width: 900px) {
+  .main-nav {
+    gap: 8px;
+    margin-right: 10px;
+  }
+  .nav-link {
+    font-size: 0.98rem;
+    padding: 7px 10px;
+  }
+  .navbar .right-controls {
+    margin-right: 6px;
+    gap: 4px;
+  }
+  .navbar .search-container {
+    gap: 4px;
+  }
+  #search-input {
+    width: 90px;
+    font-size: 0.95rem;
+  }
+  #dark-mode-toggle {
+    font-size: 1.1rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    min-height: 48px;
+    padding: 0 0 0 0;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .main-nav {
+    gap: 2px;
+    margin-right: 2px;
+  }
+  .nav-link {
+    font-size: 0.92rem;
+    padding: 6px 7px;
+    border-radius: 20px;
+    margin: 0 1px;
+  }
+  .navbar .right-controls {
+    gap: 2px;
+    margin-right: 2px;
+  }
+  .navbar .search-container {
+    flex-direction: row;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    gap: 2px;
+  }
+  #search-input {
+    width: 80px;
+    font-size: 0.9rem;
+  }
+  #dark-mode-toggle {
+    font-size: 1rem;
+    padding: 5px 8px;
+  }
+}
+
+
 
 .navbar a {
   color: white;
@@ -505,22 +669,88 @@ body.dark-mode .search-result-item:hover {
   animation: highlight 1.5s;
 }
 
+
 @media (max-width: 768px) {
   .navbar {
-    top: 20px;
-    right: 20px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 10px;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0 10px;
+    height: auto;
+    width: 100%;
   }
 
-  .search-container {
-    margin-right: 2px;
+  .logo {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    height: 48px;
+    width: 48px;
+    margin: 0;
+    z-index: 2000;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .navbar .search-container {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto 0 auto;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #search-input {
+    width: 100%;
+    min-width: 0;
+    max-width: 180px;
+    font-size: 0.92rem;
+    margin: 0 auto 6px auto;
+    display: block;
+  }
+
+  #dark-mode-toggle {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 6px 0;
+    margin: 0 auto 6px auto;
+    display: block;
+    border-radius: 20px;
+  }
+
+  .navbar a,
+  .nav-link {
+    margin: 5px 0;
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 
   .intro-info {
-    margin-left: 5%;
+    margin-left: 0;
     text-align: center;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    box-sizing: border-box;
+  }
+
+  #intro-name {
+    font-size: 2.2rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    overflow-wrap: break-word;
+    white-space: normal;
+    border-right: none !important;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+    display: block;
   }
 
   .cta-buttons {
@@ -538,8 +768,8 @@ body.dark-mode .search-result-item:hover {
     right: auto;
     transform: none;
     margin: 2rem auto;
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
   }
 
   section {
@@ -550,7 +780,7 @@ body.dark-mode .search-result-item:hover {
 
 /* Second Page About Section */
 #about {
-  background: #f9f9f9;
+  background: #fff7ed;
   position: relative;
   top: 0px;
   margin-bottom: -15px;
@@ -735,7 +965,7 @@ body.dark-mode .detail-value {
 #skills-section {
   text-align: center;
   padding: 4rem 2rem 6rem;
-  background-color: #f9f9f9;
+  background: #e3f3ff;
   overflow: hidden;
 }
 
@@ -810,7 +1040,7 @@ body.dark-mode .detail-value {
 
 /* Dark Mode */
 body.dark-mode #skills-section {
-  background-color: #1a1a1a;
+  background-color: #18222b;
 }
 
 body.dark-mode .skills-intro h2 {
@@ -876,16 +1106,35 @@ body.dark-mode .circle span {
 
 /* Very Small Screens */
 @media (max-width: 400px) {
-  .circular-skills {
-    gap: 1rem;
+  .intro-info {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    max-width: 100vw;
+    word-break: break-word;
   }
 
-  .skill-circle {
-    flex: 1 1 100px;
-    position: static;
-    transform: none !important;
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
   }
 
+  .btn {
+    width: 90vw;
+    max-width: 320px;
+    min-width: 0; 
+    box-sizing: border-box;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-align: center;
+    margin: 0 auto;
+  }
   .circle {
     width: 80px;
     height: 80px;
@@ -898,7 +1147,7 @@ body.dark-mode .circle span {
 /* Projects Section */
 #projects {
   padding: 80px 20px;
-  background-color: var(--section-bg);
+  background: #fdf6f0;
   color: var(--text-color);
 }
 
@@ -1083,7 +1332,7 @@ body.dark-mode .project-card:hover {
 
 .contact-section {
   padding: 80px 20px;
-  background-color: var(--section-bg);
+  background: #f6f7fb;
   color: var(--text-color);
   transition: all 0.3s ease;
 }
