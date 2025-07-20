@@ -1151,6 +1151,10 @@ body.dark-mode .circle span {
   color: var(--text-color);
 }
 
+body.dark-mode #projects {
+  background: #3a2338; /* deep warm purple, not blue */
+}
+
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
